@@ -1,0 +1,102 @@
+[
+    {
+        "caretX": 15,
+        "caretY": 7,
+        "filename": "D:/Documents/projects/chess_online/game.h",
+        "focused": false,
+        "isOpen": true,
+        "left": 0,
+        "order": 9,
+        "top": 0
+    },
+    {
+        "caretX": 2,
+        "caretY": 57,
+        "filename": "D:/Documents/projects/chess_online/guide.cpp",
+        "focused": true,
+        "isOpen": true,
+        "left": 0,
+        "order": 7,
+        "top": 2280
+    },
+    {
+        "caretX": 15,
+        "caretY": 7,
+        "filename": "D:/Documents/projects/chess_online/game.cpp",
+        "focused": false,
+        "isOpen": true,
+        "left": 0,
+        "order": 8,
+        "top": 0
+    },
+    {
+        "caretX": 30,
+        "caretY": 9,
+        "filename": "D:/Documents/projects/chess_online/IO.h",
+        "focused": false,
+        "isOpen": true,
+        "left": 0,
+        "order": 5,
+        "top": 0
+    },
+    {
+        "caretX": 22,
+        "caretY": 10,
+        "filename": "D:/Documents/projects/chess_online/guide.h",
+        "focused": false,
+        "isOpen": true,
+        "left": 0,
+        "order": 6,
+        "top": 0
+    },
+    {
+        "caretX": 1,
+        "caretY": 9,
+        "filename": "D:/Documents/projects/chess_online/chient.h",
+        "focused": false,
+        "isOpen": true,
+        "left": 0,
+        "order": 2,
+        "top": 0
+    },
+    {
+        "caretX": 26,
+        "caretY": 17,
+        "filename": "D:/Documents/projects/chess_online/data.h",
+        "focused": false,
+        "isOpen": true,
+        "left": 0,
+        "order": 4,
+        "top": 57
+    },
+    {
+        "caretX": 2,
+        "caretY": 12,
+        "filename": "D:/Documents/projects/chess_online/main.cpp",
+        "focused": false,
+        "isOpen": true,
+        "left": 0,
+        "order": 0,
+        "top": 0
+    },
+    {
+        "caretX": 46,
+        "caretY": 82,
+        "filename": "D:/Documents/projects/chess_online/data.cpp",
+        "focused": false,
+        "isOpen": true,
+        "left": 0,
+        "order": 3,
+        "top": 4446
+    },
+    {
+        "caretX": 75,
+        "caretY": 36,
+        "filename": "D:/Documents/projects/chess_online/chient.cpp",
+        "focused": false,
+        "isOpen": true,
+        "left": 0,
+        "order": 1,
+        "top": 2128
+    }
+]
