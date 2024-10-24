@@ -54,7 +54,7 @@ void printWelcome(){
 	system("cls");
 }
 void printStartMenu(){
-	printWelcome();
+	//printWelcome();
 	cout<<"================================="<<endl;
 	cout<<"五子棋 ONLINE 开始菜单           "<<endl;
 	cout<<"                                 "<<endl;
@@ -116,6 +116,7 @@ void sendVSrequst(){
 	sendRequest(sock,"SETSTR",token,4,Rawstring);
 	PrintInfo("请求已发送，等待对方接受");
 	while(1){
+		Sleep(5000);
 		Rawstring = sendRequest(sock,"GETSTR",token,4);
 		string findstring = PlayerData[num].name;
 		findstring.push_back('*');
@@ -124,7 +125,7 @@ void sendVSrequst(){
 		if(Rawstring[resultcur - 1] == '(' && Rawstring[resultcur + findstring.length()] == ')'){
 			break;
 		}
-		Sleep(5000);
+		
 	}
 	PrintInfo("对方接受了你的请求");
 	//startgame
@@ -135,30 +136,34 @@ void checkVSrequst(){
 	vector<string> requestList;
 	requestList.clear();
 	size_t findcur = Rawstring.find(userID);
-	while(findcur != string::npos && Rawstring[findcur-1] == '(' && Rawstring[findcur + userID.length()] == ')'){
-		
+	int pos = findcur;
+	while(findcur != string::npos){
+		if(Rawstring[findcur-1] != '(' || Rawstring[findcur + userID.length()] != ')'){
+			pos++;
+		}
 		string goalstring;
 		
-		while(Rawstring[findcur] != ':') findcur--;
+		while(Rawstring[findcur] != '|') findcur--;
 		findcur++;
 		
-		while(Rawstring[findcur] != '(') goalstring.push_back(Rawstring[findcur]);
-		goalstring.pop_back();
+		while(Rawstring[findcur] != ':'){
+			goalstring.push_back(Rawstring[findcur]);
+			findcur++;
+		}
 		requestList.push_back(goalstring);
 		
 		Rawstring.erase(findcur,userID.length());
-		findcur = Rawstring.find(userID);
+		findcur = Rawstring.find(userID,pos);
 	}
 	if(requestList.size() == 0){
 		PrintInfo("目前没有收到请求");
 		return;
 	}
+	cout<<"======请求列表======="<<endl;
 	for(int i = 0;i < (int)requestList.size();i++){
 		cout<<i<<".    "<<requestList[i]<<endl;
 	}
-	PrintInfo("请输入欲接收的对局请求");
 	int num;
-	cin>>num;
 	bool numSucessFlag = false;
 	while(!numSucessFlag){
 		PrintInfo("请输入欲接收的对局请求");
@@ -169,7 +174,15 @@ void checkVSrequst(){
 			break;
 		}
 	}
+	Rawstring = sendRequest(sock,"GETSTR",token,4);
 	string goalPlayer = requestList[num];
+	goalPlayer.insert(0,"|");
+	goalPlayer.push_back(':');
+	findcur = Rawstring.find(goalPlayer);
+	while(Rawstring[findcur] != ')') findcur++;
+	Rawstring.insert(--findcur,"*");
+	sendRequest(sock,"SETSTR",token,4,Rawstring);
+	PrintInfo("等待对方响应中");
 	
 }
 void PrintMainMenu(){
@@ -191,5 +204,9 @@ void PrintMainMenu(){
 	}
 	if(ops == 2){
 		checkVSrequst();
+	}
+	if(ops == 3){
+		printPHB();
+		system("pause");
 	}
 }
