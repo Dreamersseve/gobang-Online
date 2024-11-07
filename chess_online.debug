@@ -1,0 +1,31 @@
+{
+    "breakpoints": [
+        {
+            "breakpoint_type": 0,
+            "condition": "",
+            "enabled": true,
+            "filename": "data.cpp",
+            "line": 134,
+            "timestamp": "1729647927384"
+        },
+        {
+            "breakpoint_type": 0,
+            "condition": "",
+            "enabled": true,
+            "filename": "data.cpp",
+            "line": 217,
+            "timestamp": "1729647959686"
+        },
+        {
+            "breakpoint_type": 0,
+            "condition": "",
+            "enabled": true,
+            "filename": "guide.cpp",
+            "line": 134,
+            "timestamp": "1729739476910"
+        }
+    ],
+    "timestamp": "1730620341986",
+    "watchvars": [
+    ]
+}
