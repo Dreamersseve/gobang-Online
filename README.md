@@ -3,8 +3,8 @@
 ### 一个使用C++编写的控制台五子棋在线对战游戏。
 
 ![image](image/c.jpg)
-![image](image/c1.jpg)
 ![image](image/c2.jpg)
+![image](image/c3.jpg)
 ![image](image/server.jpg)
 ## 项目结构
 
