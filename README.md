@@ -2,10 +2,14 @@
 
 ### 一个使用C++编写的控制台五子棋在线对战游戏。
 
-![image](image\c.jpg)
-![image](image\c1.jpg)
-![image](image\c2.jpg)
-![image](image\server.jpg)
+![image](public\image\c.jpg)
+
+![image](public\image\c1.jpg)
+
+![image](public\image\c2.jpg)
+
+![image](public\image\server.jpg)
+
 ## 项目结构
 
 - **服务端**：存储数据信息, 处理客户端请求。
