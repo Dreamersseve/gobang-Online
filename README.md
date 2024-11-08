@@ -2,6 +2,10 @@
 
 ### 一个使用C++编写的控制台五子棋在线对战游戏。
 
+![image](image\c.jpg)
+![image](image\c1.jpg)
+![image](image\c2.jpg)
+![image](image\server.jpg)
 ## 项目结构
 
 - **服务端**：存储数据信息, 处理客户端请求。
@@ -51,4 +55,5 @@
 - GitHub Issues：在 GitHub 项目仓库中提交 Issue。
 - 电子邮件：发送邮件到 71415162@qq.com。
 
-感谢你的关注和支持！
+### 最后的话
+作者高一，在学OI，英语不好，对象名会有很多拼错的单词，见笑。
