@@ -1,13 +1,12 @@
 #ifndef SERVER_H
 #define SERVER_H
-#include<bits/stdc++.h>
 using namespace std;
 #include <winsock2.h>  
 #include <ws2tcpip.h>  
 #include <iostream>  
 #include <string>  
 #include <thread>  
-
+#include <fstream>
 #pragma comment(lib, "Ws2_32.lib")  
 extern const int PORT = 11451;  
 extern const int maxn = 100; // 假设我们最多存储100个字符串和整数  

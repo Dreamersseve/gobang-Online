@@ -6,17 +6,17 @@ CC       = "gcc.exe"
 WINDRES  = "windres.exe"
 RM       = del /q /f
 CD       = cd /d
-LIBS     = "-pg" "-Wl,--stack,12582912" "C:/Windows/System32/ws2_32.dll"
+LIBS     = "-Wl,--stack,12582912" "C:/Windows/System32/ws2_32.dll" "-static"
 INCS     = 
 CXXINCS  = 
-CXXFLAGS = $(CXXINCS) "-g3" "-O3" "-std=c++14" "-pipe" "-Wall" "-O2" "-D_DEBUG"
-CFLAGS   = $(INCS) "-g3" "-O3" "-pipe" "-Wall" "-O2" "-D_DEBUG"
+CXXFLAGS = $(CXXINCS) "-g3" "-pipe" "-Wall" "-D_DEBUG"
+CFLAGS   = $(INCS) "-g3" "-pipe" "-Wall" "-D_DEBUG"
 WINDRESFLAGS = 
 RES      = server_pro_private.res
-OBJ      = main.o server.o $(RES)
+OBJ      = server.o main.o $(RES)
 BIN      = server_pro.exe
-LINKOBJ  = "main.o" "server.o" "server_pro_private.res"
-CLEANOBJ = "main.o" "server.o" "server_pro_private.res" "server_pro.exe"
+LINKOBJ  = "server.o" "main.o" "server_pro_private.res"
+CLEANOBJ = "server.o" "main.o" "server_pro_private.res" "server_pro.exe"
 
 .PHONY: all all-before all-after clean clean-custom
 
@@ -29,11 +29,11 @@ server_pro.exe: $(OBJ)
 
 	$(CXX) $(LINKOBJ) -o "server_pro.exe" $(LIBS)
 
-main.o: main.cpp server.h
-	$(CXX) -c "main.cpp" -o "main.o" $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
-
 server.o: server.cpp
 	$(CXX) -c "server.cpp" -o "server.o" $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
+
+main.o: main.cpp server.h
+	$(CXX) -c "main.cpp" -o "main.o" $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
 
 server_pro_private.res: server_pro_private.rc 
 	$(WINDRES) -i "server_pro_private.rc" --input-format=rc -o "server_pro_private.res" -O coff $(WINDRESFLAGS) 

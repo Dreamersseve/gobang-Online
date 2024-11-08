@@ -31,7 +31,7 @@ CommandLine =
 Folders = 
 IncludeVersionInfo = 0
 SupportXPThemes = 0
-CompilerSet = 3
+CompilerSet = 1
 StaticLink = 0
 AddCharset = 1
 ExecEncoding = SYSTEM
@@ -44,7 +44,7 @@ UseUTF8 = 1
 
 
 [Unit1]
-FileName = main.cpp
+FileName = server.cpp
 CompileCpp = 1
 Folder = 源文件
 Compile = 1
@@ -77,11 +77,11 @@ SyncProduct = 1
 
 
 [Unit2]
-FileName = server.cpp
-CompileCpp = 1
-Folder = 源文件
-Compile = 1
-Link = 1
+FileName = server.h
+CompileCpp = 0
+Folder = 头文件
+Compile = 0
+Link = 0
 Priority = 1000
 OverrideBuildCmd = 0
 BuildCmd = 
@@ -90,11 +90,11 @@ RealEncoding = UTF-8
 
 
 [Unit3]
-FileName = server.h
-CompileCpp = 0
-Folder = 头文件
-Compile = 0
-Link = 0
+FileName = main.cpp
+CompileCpp = 1
+Folder = 源文件
+Compile = 1
+Link = 1
 Priority = 1000
 OverrideBuildCmd = 0
 BuildCmd = 

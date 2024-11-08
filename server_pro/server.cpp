@@ -1,12 +1,11 @@
-#include<bits/stdc++.h>
+
 using namespace std;
 #include <winsock2.h>  
 #include <ws2tcpip.h>  
 #include <iostream>  
 #include <string>  
 #include <thread>  
-
-#pragma comment(lib, "Ws2_32.lib")  
+#include <sstream>
 bool shutdownflag = false;
 void setColor(int color) {  
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);  

@@ -1,7 +1,7 @@
 #ifndef GUIDE_H
 #define GUIDE_H
 #include<bits/stdc++.h>
-
+#include<windows.h>
 
 using namespace std;
 

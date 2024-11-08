@@ -208,6 +208,22 @@ int login(){// -1错误 0 成功;
 	sendRequest(sock,"SETSTR",token,3,Onlineplayer);
 	return 0;
 }
+int logout(){
+	while(1){
+		string Rawstring = sendRequest(sock,"GETSTR",token,3);
+		string goalstring = userID;
+		goalstring.push_back('|');
+		goalstring.insert(0,"|");
+		size_t cur = Rawstring.find(goalstring);
+		if(cur == string::npos) return 0;
+		cur++;
+		while(Rawstring[cur] != '|') Rawstring.erase(cur,1);
+		Rawstring.erase(cur-1,1),Rawstring.erase(cur-1,1);
+		sendRequest(sock,"SETSTR",token,3,Rawstring);
+	}
+	return 0;
+}
+
 vector<PLAYER> PlayerData;
 void getALLplayerData(){
 	PlayerData.clear();
@@ -303,3 +319,6 @@ void playerFAL(){
 	nowplayer.lose++;
 	updateData(nowplayer);
 }
+
+
+

@@ -31,6 +31,7 @@ PLAYER getUserData(string UID);
 void printPHB();
 int updateData(PLAYER player);
 int login();
+int logout();
 extern vector<PLAYER> PlayerData;
 void getALLplayerData();
 #endif

@@ -4,7 +4,7 @@
 #include"data.h"
 #include"game.h"
 using namespace std;
-
+int logout();
 void printWelcome(){
 	int turns = 30;
 	while(turns--){
@@ -246,11 +246,11 @@ void PrintMainMenu(){
 	cout<<userID<<"，您好"<<endl;
 	cout<<endl;
 	
-	cout<<"1|发起对局请求, 2|查看对局邀请, 3|查看排行榜"<<endl;
+	cout<<"1|发起对局请求, 2|查看对局邀请, 3|查看排行榜, 4|退出登录"<<endl;
 	   
 	int ops;
 	   cin>>ops;
-	while(ops < 0 || ops > 3){
+	while(ops < 0 || ops > 4){
 		PrintErr("不合法的请求");
 		cin>>ops;
 	}
@@ -263,6 +263,13 @@ void PrintMainMenu(){
 	if(ops == 3){
 		printPHB();
 		system("pause");
+	}
+	if(ops == 4){
+		logout();
+		PrintInfo("退出登录成功");
+		Sleep(1000);
+		exit(0);
+		return;
 	}
 }
 void WIN(){
@@ -291,3 +298,4 @@ void HE(){
 	cout<<"====平局===="<<endl;
 	
 }
+

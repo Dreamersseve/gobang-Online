@@ -8,7 +8,7 @@
 #include "guide.h"
 #include "game.h"
 //192.168.5.92
-string serverIP = "192.168.5.85";
+string serverIP = "192.168.1.14";
 int port = 11451;
 std::string sendRequest(SOCKET sock, const std::string& action, const std::string& token, int index = -1, const std::string& value = "", int intValue = -1) {  
 	char buffer[2048]; 
@@ -51,8 +51,17 @@ std::string sendRequest(SOCKET sock, const std::string& action, const std::strin
 }  
 std::string token = "sever_pro::";
 SOCKET sock;
+
+
+
 int run_chient() {  
 	
+	PrintInfo("输入连接IP (输入0使用默认ip)");
+	int opt;
+	cin>>opt;
+	if(opt != 0){
+		cin>>serverIP;
+	}
 	
 	
 	WSADATA wsaData;  
