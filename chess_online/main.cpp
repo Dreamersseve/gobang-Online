@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
-#include "data.h"
 #include "chient.h"
+#include "data.h"
+
 #include "guide.h"
 #include "game.h"
 using namespace std;

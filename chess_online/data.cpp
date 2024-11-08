@@ -1,5 +1,6 @@
-#include<bits/stdc++.h>
 #include"chient.h"
+#include<bits/stdc++.h>
+
 using namespace std;
 const int MXplayerID = 20;
 struct PLAYER{

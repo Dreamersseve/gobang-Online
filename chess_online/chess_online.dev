@@ -1,7 +1,7 @@
 [Project]
 filename = chess_online.dev
 name = chess_online
-UnitCount = 10
+UnitCount = 12
 Type = 1
 Ver = 3
 Includes = 
@@ -44,7 +44,7 @@ UseUTF8 = 1
 
 
 [Unit1]
-FileName = data.h
+FileName = Pvp.h
 CompileCpp = 0
 Folder = 头文件
 Compile = 0
@@ -60,24 +60,24 @@ RealEncoding = ASCII
 Major = 0
 Minor = 0
 Release = 0
-Build = 74
+Build = 87
 LanguageID = 1033
 CharsetID = 1252
 CompanyName = 
-FileVersion = 0.0.0.74
+FileVersion = 0.0.0.87
 FileDescription = Developed using the Red Panda C++ IDE
 InternalName = 
 LegalCopyright = 
 LegalTrademarks = 
 OriginalFilename = chess_online.exe
 ProductName = chess_online
-ProductVersion = 0.0.0.74
+ProductVersion = 0.0.0.87
 AutoIncBuildNr = 1
 SyncProduct = 1
 
 
 [Unit2]
-FileName = chient.h
+FileName = game.h
 CompileCpp = 0
 Folder = 头文件
 Compile = 0
@@ -90,20 +90,7 @@ RealEncoding = UTF-8
 
 
 [Unit3]
-FileName = IO.h
-CompileCpp = 0
-Folder = 头文件
-Compile = 0
-Link = 0
-Priority = 1000
-OverrideBuildCmd = 0
-BuildCmd = 
-FileEncoding = PROJECT
-RealEncoding = UTF-8
-
-
-[Unit4]
-FileName = chient.cpp
+FileName = main.cpp
 CompileCpp = 1
 Folder = 源文件
 Compile = 1
@@ -115,12 +102,25 @@ FileEncoding = PROJECT
 RealEncoding = UTF-8
 
 
-[Unit5]
-FileName = game.h
+[Unit4]
+FileName = data.h
 CompileCpp = 0
 Folder = 头文件
 Compile = 0
 Link = 0
+Priority = 1000
+OverrideBuildCmd = 0
+BuildCmd = 
+FileEncoding = PROJECT
+RealEncoding = UTF-8
+
+
+[Unit5]
+FileName = PvpRequst.cpp
+CompileCpp = 1
+Folder = 源文件
+Compile = 1
+Link = 1
 Priority = 1000
 OverrideBuildCmd = 0
 BuildCmd = 
@@ -142,11 +142,11 @@ RealEncoding = ASCII
 
 
 [Unit7]
-FileName = guide.cpp
-CompileCpp = 1
-Folder = 源文件
-Compile = 1
-Link = 1
+FileName = IO.h
+CompileCpp = 0
+Folder = 头文件
+Compile = 0
+Link = 0
 Priority = 1000
 OverrideBuildCmd = 0
 BuildCmd = 
@@ -155,19 +155,6 @@ RealEncoding = UTF-8
 
 
 [Unit8]
-FileName = main.cpp
-CompileCpp = 1
-Folder = 源文件
-Compile = 1
-Link = 1
-Priority = 1000
-OverrideBuildCmd = 0
-BuildCmd = 
-FileEncoding = PROJECT
-RealEncoding = UTF-8
-
-
-[Unit9]
 FileName = game.cpp
 CompileCpp = 1
 Folder = 源文件
@@ -180,8 +167,47 @@ FileEncoding = PROJECT
 RealEncoding = UTF-8
 
 
+[Unit9]
+FileName = chient.h
+CompileCpp = 0
+Folder = 头文件
+Compile = 0
+Link = 0
+Priority = 1000
+OverrideBuildCmd = 0
+BuildCmd = 
+FileEncoding = PROJECT
+RealEncoding = ASCII
+
+
 [Unit10]
+FileName = chient.cpp
+CompileCpp = 1
+Folder = 源文件
+Compile = 1
+Link = 1
+Priority = 1000
+OverrideBuildCmd = 0
+BuildCmd = 
+FileEncoding = PROJECT
+RealEncoding = UTF-8
+
+
+[Unit11]
 FileName = data.cpp
+CompileCpp = 1
+Folder = 源文件
+Compile = 1
+Link = 1
+Priority = 1000
+OverrideBuildCmd = 0
+BuildCmd = 
+FileEncoding = PROJECT
+RealEncoding = UTF-8
+
+
+[Unit12]
+FileName = guide.cpp
 CompileCpp = 1
 Folder = 源文件
 Compile = 1
