@@ -16,7 +16,8 @@ struct PLAYER{
 };
 void setColor(int color);
 void resetColor();
-
+void playerWIN();
+void playerFAL();
 void PrintInfo(string str);
 void PrintWar(string str);
 void PrintErr(string str);
@@ -28,7 +29,7 @@ bool Can_Be_Password(string PSW);
 int Register();
 PLAYER getUserData(string UID);
 void printPHB();
-
+int updateData(PLAYER player);
 int login();
 extern vector<PLAYER> PlayerData;
 void getALLplayerData();

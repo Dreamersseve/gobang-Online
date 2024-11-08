@@ -7,12 +7,11 @@
 #include "IO.h"
 #include "guide.h"
 #include "game.h"
-#pragma comment(lib, "Ws2_32.lib")  
-
-string serverIP = "127.0.0.1";
+//192.168.5.92
+string serverIP = "192.168.5.85";
 int port = 11451;
 std::string sendRequest(SOCKET sock, const std::string& action, const std::string& token, int index = -1, const std::string& value = "", int intValue = -1) {  
-	char buffer[2048],tempbuffer[2048];  
+	char buffer[2048]; 
 	std::string fullRequest;  
 	if (action == "SETSTR") {  
 		// 构建 "SET TOKEN INDEX VALUE INTVALUE" 请求  
@@ -53,6 +52,9 @@ std::string sendRequest(SOCKET sock, const std::string& action, const std::strin
 std::string token = "sever_pro::";
 SOCKET sock;
 int run_chient() {  
+	
+	
+	
 	WSADATA wsaData;  
 	int result = WSAStartup(MAKEWORD(2, 2), &wsaData);  
 	if (result != 0) {  

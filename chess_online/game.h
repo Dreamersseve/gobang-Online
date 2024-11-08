@@ -5,5 +5,6 @@
 
 using namespace std;
 int runGAME();
-
+void Startgame(int stringcur,string VSname);
+void BeStartgame(int stringcur,string VSname);
 #endif

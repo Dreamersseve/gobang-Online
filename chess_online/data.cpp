@@ -37,13 +37,11 @@ string userID;
 PLAYER Nowplayer;
 string getPassword(string UID){
 	string Rawstring = sendRequest(sock, "GETSTR", token, 1);  
-	
-	size_t UIDcur = Rawstring.find(UID);
+	string RawUID = UID;
+	RawUID.insert(0,"|");
+	RawUID.push_back(':');
+	size_t UIDcur = Rawstring.find(RawUID);
 	if(UIDcur == std::string::npos){
-		PrintErr("UserID不存在");
-		return "-1";
-	}
-	if(Rawstring[UIDcur-1] != '|' || Rawstring[UIDcur + UID.length()] != ':'){
 		PrintErr("UserID不存在");
 		return "-1";
 	}
@@ -56,7 +54,7 @@ string getPassword(string UID){
 }
 bool Can_Be_Username(string UID){
 	for(int i = 0;i < (int)UID.length();i++){
-		if(!(UID[i] >= 'a' && UID[i] <= 'z') || (UID[i] >= 'A' && UID[i] <= 'Z') || UID[i] == '_') return false;
+		if(!((UID[i] >= 'a' && UID[i] <= 'z') || (UID[i] >= 'A' && UID[i] <= 'Z') || UID[i] == '_')) return false;
 	}
 	return true;
 }
@@ -74,7 +72,7 @@ int Register(){
 	while(!IDsucessFlag){
 		PrintInfo("输入注册ID，ID只能由a-z,A-Z,与'_'组成，不可包含数字，且长度在20个字符以内");
 		regID.clear();
-		cin>>regID;
+		 cin>>regID;
 		Rawstring = sendRequest(sock, "GETSTR", token, 1); //为了防止注册期间ID被其他人注册，每次都更新一次ID列表
 		
 		if(regID.length() > MXplayerID){
@@ -103,7 +101,7 @@ int Register(){
 	while(!PSWsucessFlag){
 		PrintInfo("输入密码，密码只能由0-9组成，且长度在20个字符以内");
 		regPSW.clear();
-		cin>>regPSW;
+		 cin>>regPSW;
 		if(regPSW.length() > 20){
 			PrintInfo("密码过长，请重新输入");
 		}else{
@@ -134,7 +132,7 @@ PLAYER getUserData(string UID){ //请保证UID合法且存在！
 	
 	ans.name = UID;
 	if(!Can_Be_Username(UID)){
-		PrintErr("非法UID，无法获取数据");
+		//PrintErr("非法UID，无法获取数据");
 		ans.onlineflag = 0,ans.lose = ans.win = -1;
 		return ans;
 	}
@@ -166,12 +164,12 @@ int login(){// -1错误 0 成功;
 		PrintInfo("请输入您的ID");
 		cin>>UID;
 		if(!Can_Be_Username(UID)){
-			PrintErr("非法UID");
 			continue;
 		}
 		needPassword = getPassword(UID);
 		if(needPassword != "-1") UIDsucessFlag = true;
 		else PrintWar("找不到用户，请重新输入");
+		Sleep(100);
 	}
 	bool PSWsuccessFlag = false;
 	int choice = 5;
@@ -265,4 +263,43 @@ void printPHB(){
 		cout<<endl;
 	}
 }
-
+//str2:  |name|0|0|   |名|胜利场数|失败场数|
+int updateData(PLAYER player){
+	string Rawstring = sendRequest(sock,"GETSTR",token,2);
+	string goalplayer = player.name;
+	goalplayer.insert(0,"|");
+	goalplayer.push_back(':');
+	size_t stringcur = Rawstring.find(goalplayer);
+	if(stringcur == string::npos){
+		return -1;
+	}
+	stringcur++;
+	while(Rawstring[stringcur] != ':'){ // 跳过name
+		stringcur++;
+	}
+	while(Rawstring[stringcur+1] != '|'){//删除原有数据
+		Rawstring.erase(stringcur+1,1);
+	}
+	Rawstring.insert(stringcur+1,to_string(player.win));
+	
+	
+	stringcur += to_string(player.win).length() + 1;
+	while(Rawstring[stringcur+1] != '|'){//删除原有数据
+		Rawstring.erase(stringcur+1,1);
+	}
+	Rawstring.insert(stringcur+1,to_string(player.lose));
+	
+	sendRequest(sock,"SETSTR",token,2,Rawstring);
+	return 0;
+}
+void playerWIN(){
+	Sleep(100);
+	PLAYER nowplayer = getUserData(userID);
+	nowplayer.win++;
+	updateData(nowplayer);
+}
+void playerFAL(){
+	PLAYER nowplayer = getUserData(userID);
+	nowplayer.lose++;
+	updateData(nowplayer);
+}
