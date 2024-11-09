@@ -3,7 +3,7 @@
 #include "guide.h"
 #include "data.h"
 #include "game.h"
-
+const int startgetstring = 5;
 using namespace std;
 
 void printOnlineList();
@@ -54,7 +54,8 @@ void sendVSrequst(){
 	PrintInfo("对方接受了你的请求");
 	while(Rawstring[resultcur] != '*') resultcur++;
 	Rawstring.erase(resultcur,1);
-	int needstring = 4;
+	int needstring = startgetstring;
+	
 	string Rawstring2;
 	do{
 		++needstring;
@@ -155,6 +156,22 @@ void checkVSrequst(){
 	
 }
 
-void Pvpmatching(){
+void PvpMatching(){
+	system("cls");
+	getALLplayerData();
+	PrintInfo("正在为你匹配势均力敌的对手...");
+	double nowPlayer_winrol = (double)(Nowplayer.win + Nowplayer.lose) / (double)(Nowplayer.win+1);
+	PLAYER goalplayer;
+	for(int i = 0;i < (int)PlayerData.size();i++){
+		double goalPlayer_winrol = (double)(PlayerData[i].win + PlayerData[i].lose) / (double)(PlayerData[i].win+1);
+		if(abs(nowPlayer_winrol - goalPlayer_winrol) <= 2){
+			goalplayer = PlayerData[i];
+			break;
+		}
+		if(i == (int)PlayerData.size() - 1){
+			PrintInfo("目前没有与你实力匹配的对手...");
+			return;
+		}
+	}
 	//dosth
 }

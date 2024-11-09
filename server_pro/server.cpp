@@ -83,7 +83,7 @@ void handleClient(SOCKET clientSocket) {
 			strIndexStr = rest.substr(0, rest.find(' '));  
 			strIndex = std::stoi(strIndexStr.c_str());  
 			if (strIndex >= 0 && strIndex < maxn) {  
-				cout<<"\n[INFO] 字符串 "<<strIndex<<" 被客户端"<<clientSocket<<"获取:"<<strings[strIndex]<<endl;
+				cout<<"\n[INFO] st "<<strIndex<<" be "<<clientSocket<<"get:"<<strings[strIndex]<<endl;
 				//strings[strIndex].push_back('\n');
 				send(clientSocket, strings[strIndex].c_str(), strings[strIndex].size(), 0);  
 				//send(clientSocket, "\n", 1, 0); 
@@ -95,7 +95,7 @@ void handleClient(SOCKET clientSocket) {
 			strIndexStr = rest.substr(0, rest.find(' '));  
 			strIndex = std::stoi(strIndexStr.c_str());  
 			if (strIndex >= 0 && strIndex < maxn) {   
-				cout<<"[INFO] 整数 "<<strIndex<<" 被客户端"<<clientSocket<<"获取:"<<integers[strIndex]<<endl;
+				cout<<"[INFO] int "<<strIndex<<" be "<<clientSocket<<"gt:"<<integers[strIndex]<<endl;
 				string sended = std::to_string(integers[strIndex]);
 				//sended.push_back('\n');
 				send(clientSocket, sended.c_str(), sended.size(), 0);  
@@ -110,7 +110,7 @@ void handleClient(SOCKET clientSocket) {
 			intValue = atoi(setvalue.c_str());
 			if(Setcur >= 0 && Setcur < maxn){
 				integers[Setcur] = intValue;
-				cout<<"[INFO] 整数 "<<Setcur<<" 被客户端"<<clientSocket<<"修改为"<<intValue<<endl;
+				cout<<"[INFO] int "<<Setcur<<" be "<<clientSocket<<"cg:"<<intValue<<endl;
 				send(clientSocket, "OK", 2, 0);  
 			} else {
 				send(clientSocket, "ERROR: Index out of range\n", 20, 0);  
@@ -122,7 +122,7 @@ void handleClient(SOCKET clientSocket) {
 			getline(iss,strvalue,' ');
 			if(Setcur >= 0 && Setcur < maxn){
 				strings[Setcur] = strvalue;
-				cout<<"\n[INFO] 字符串 "<<Setcur<<" 被客户端"<<clientSocket<<"修改为"<<strvalue<<endl;
+				cout<<"\n[INFO] st "<<Setcur<<" be "<<clientSocket<<"cg:"<<strvalue<<endl;
 				//cout<<strings[1]<<endl;
 				send(clientSocket, "OK", 2, 0);  
 			} else {

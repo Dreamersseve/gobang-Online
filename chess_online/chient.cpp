@@ -10,8 +10,8 @@
 #include "guide.h"
 #include "game.h"
 //192.168.5.92
-string serverIP = "192.168.1.14";
-int port = 11451;
+string serverIP = "103.123.4.252";
+int port = 32449;
 std::string sendRequest(SOCKET sock, const std::string& action, const std::string& token, int index = -1, const std::string& value = "", int intValue = -1) {  
 	char buffer[2048]; 
 	std::string fullRequest;  
@@ -101,7 +101,8 @@ int run_chient() {
 			3.在线玩家列表 ID|ID|
 			4.对局请求 A客户端查询在线玩家列表,发出请求,A客户端修改,B客户端查询,决策,
 			修改,A客户端分配int,B客户端读取分配结果,请求该位清零,开始对局.
-			5-100:对局数据 
+	|A用户端名:B用户端名 * [坐标] |
+			6-100:对局数据 
 				玩家A-玩家B-操作分配地址ijk | ij 落子坐标 k 轮数
 		int分配
 			随服务器决定

@@ -103,17 +103,14 @@ void PrintMainMenu(){
 	cout<<userID<<"，您好"<<endl;
 	cout<<endl;
 	
-	cout<<"0|进行匹配,\n1|发起对局请求,\n2|查看对局邀请\n 3|查看排行榜,\n4|退出登录"<<endl;
+	cout<<"\n1|发起对局请求\n2|查看对局邀请\n 3|查看排行榜\n4|退出登录"<<endl;
 	   
 	int ops;
 	   cin>>ops;
-	while(ops < 0 || ops > 4){
+	while(ops < 1 || ops > 4){
 		PrintErr("不合法的请求");
 		cin.get();
 		cin>>ops;
-	}
-	if(ops == 0){
-		
 	}
 	if(ops == 1){
 		sendVSrequst();

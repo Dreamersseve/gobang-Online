@@ -13,10 +13,10 @@ CXXFLAGS = $(CXXINCS) "-g3" "-O2" "-std=c++14" "-pipe" "-Wall" "-Wextra" "-D_DEB
 CFLAGS   = $(INCS) "-g3" "-O2" "-pipe" "-Wall" "-Wextra" "-D_DEBUG"
 WINDRESFLAGS = 
 RES      = chess_online_private.res
-OBJ      = main.o PvpRequst.o game.o chient.o data.o guide.o $(RES)
+OBJ      = PvpRequst.o data.o chient.o main.o game.o guide.o $(RES)
 BIN      = chess_online.exe
-LINKOBJ  = "main.o" "PvpRequst.o" "game.o" "chient.o" "data.o" "guide.o" "chess_online_private.res"
-CLEANOBJ = "main.o" "PvpRequst.o" "game.o" "chient.o" "data.o" "guide.o" "chess_online_private.res" "chess_online.exe"
+LINKOBJ  = "PvpRequst.o" "data.o" "chient.o" "main.o" "game.o" "guide.o" "chess_online_private.res"
+CLEANOBJ = "PvpRequst.o" "data.o" "chient.o" "main.o" "game.o" "guide.o" "chess_online_private.res" "chess_online.exe"
 
 .PHONY: all all-before all-after clean clean-custom
 
@@ -29,22 +29,22 @@ chess_online.exe: $(OBJ)
 
 	$(CXX) $(LINKOBJ) -o "chess_online.exe" $(LIBS)
 
-main.o: main.cpp Pvp.h game.h data.h guide.h IO.h chient.h
-	$(CXX) -c "main.cpp" -o "main.o" $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
-
-PvpRequst.o: PvpRequst.cpp Pvp.h game.h data.h guide.h IO.h chient.h
+PvpRequst.o: PvpRequst.cpp guide.h chient.h game.h data.h
 	$(CXX) -c "PvpRequst.cpp" -o "PvpRequst.o" $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
 
-game.o: game.cpp Pvp.h game.h data.h guide.h IO.h chient.h
-	$(CXX) -c "game.cpp" -o "game.o" $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
-
-chient.o: chient.cpp Pvp.h game.h data.h guide.h IO.h chient.h
-	$(CXX) -c "chient.cpp" -o "chient.o" $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
-
-data.o: data.cpp Pvp.h game.h data.h guide.h IO.h chient.h
+data.o: data.cpp chient.h
 	$(CXX) -c "data.cpp" -o "data.o" $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
 
-guide.o: guide.cpp Pvp.h game.h data.h guide.h IO.h chient.h
+chient.o: chient.cpp guide.h IO.h game.h
+	$(CXX) -c "chient.cpp" -o "chient.o" $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
+
+main.o: main.cpp guide.h chient.h game.h data.h
+	$(CXX) -c "main.cpp" -o "main.o" $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
+
+game.o: game.cpp guide.h chient.h data.h
+	$(CXX) -c "game.cpp" -o "game.o" $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
+
+guide.o: guide.cpp IO.h chient.h game.h Pvp.h data.h
 	$(CXX) -c "guide.cpp" -o "guide.o" $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
 
 chess_online_private.res: chess_online_private.rc 

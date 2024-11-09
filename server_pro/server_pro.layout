@@ -1,2 +1,32 @@
 [
+    {
+        "caretX": 19,
+        "caretY": 9,
+        "filename": "C:/Users/71415/Documents/cpp/gobang-Online-main/gobang-Online-main/server_pro/server.h",
+        "focused": false,
+        "isOpen": true,
+        "left": 0,
+        "order": 2,
+        "top": 111
+    },
+    {
+        "caretX": 35,
+        "caretY": 87,
+        "filename": "C:/Users/71415/Documents/cpp/gobang-Online-main/gobang-Online-main/server_pro/server.cpp",
+        "focused": true,
+        "isOpen": true,
+        "left": 0,
+        "order": 0,
+        "top": 4620
+    },
+    {
+        "caretX": 36,
+        "caretY": 17,
+        "filename": "C:/Users/71415/Documents/cpp/gobang-Online-main/gobang-Online-main/server_pro/main.cpp",
+        "focused": false,
+        "isOpen": true,
+        "left": 0,
+        "order": 1,
+        "top": 0
+    }
 ]
