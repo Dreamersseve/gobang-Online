@@ -1,58 +1,8 @@
 [
     {
         "caretX": 1,
-        "caretY": 1,
-        "filename": "C:/Users/71415/Documents/cpp/gobang-Online-main/gobang-Online-main/chess_online/guide.h",
-        "focused": false,
-        "isOpen": true,
-        "left": 0,
-        "order": 2,
-        "top": 0
-    },
-    {
-        "caretX": 48,
-        "caretY": 37,
-        "filename": "C:/Users/71415/Documents/cpp/gobang-Online-main/gobang-Online-main/chess_online/PvpRequst.cpp",
-        "focused": false,
-        "isOpen": true,
-        "left": 0,
-        "order": 10,
-        "top": 2772
-    },
-    {
-        "caretX": 19,
-        "caretY": 1,
-        "filename": "C:/Users/71415/Documents/cpp/gobang-Online-main/gobang-Online-main/chess_online/data.cpp",
-        "focused": false,
-        "isOpen": true,
-        "left": 0,
-        "order": 4,
-        "top": 7326
-    },
-    {
-        "caretX": 1,
-        "caretY": 12,
-        "filename": "C:/Users/71415/Documents/cpp/gobang-Online-main/gobang-Online-main/chess_online/IO.h",
-        "focused": false,
-        "isOpen": true,
-        "left": 0,
-        "order": 9,
-        "top": 0
-    },
-    {
-        "caretX": 8,
-        "caretY": 107,
-        "filename": "C:/Users/71415/Documents/cpp/gobang-Online-main/gobang-Online-main/chess_online/chient.cpp",
-        "focused": false,
-        "isOpen": true,
-        "left": 0,
-        "order": 3,
-        "top": 2970
-    },
-    {
-        "caretX": 20,
-        "caretY": 2,
-        "filename": "C:/Users/71415/Documents/cpp/gobang-Online-main/gobang-Online-main/chess_online/main.cpp",
+        "caretY": 16,
+        "filename": "D:/Documents/gobang-Online-main_2/gobang-Online-main/chess_online/guide.h",
         "focused": false,
         "isOpen": true,
         "left": 0,
@@ -60,63 +10,93 @@
         "top": 0
     },
     {
-        "caretX": 2,
-        "caretY": 308,
-        "filename": "C:/Users/71415/Documents/cpp/gobang-Online-main/gobang-Online-main/chess_online/game.cpp",
-        "focused": true,
+        "caretX": 1,
+        "caretY": 1,
+        "filename": "D:/Documents/gobang-Online-main_2/gobang-Online-main/chess_online/data.cpp",
+        "focused": false,
         "isOpen": true,
         "left": 0,
-        "order": 7,
-        "top": 10065
+        "order": 3,
+        "top": 0
+    },
+    {
+        "caretX": 10,
+        "caretY": 5,
+        "filename": "D:/Documents/gobang-Online-main_2/gobang-Online-main/chess_online/chient.h",
+        "focused": false,
+        "isOpen": true,
+        "left": 0,
+        "order": 6,
+        "top": 0
     },
     {
         "caretX": 1,
-        "caretY": 6,
-        "filename": "C:/Users/71415/Documents/cpp/gobang-Online-main/gobang-Online-main/chess_online/chient.h",
+        "caretY": 1,
+        "filename": "D:/Documents/gobang-Online-main_2/gobang-Online-main/chess_online/data.h",
+        "focused": false,
+        "isOpen": true,
+        "left": 0,
+        "order": 7,
+        "top": 0
+    },
+    {
+        "caretX": 1,
+        "caretY": 1,
+        "filename": "D:/Documents/gobang-Online-main_2/gobang-Online-main/chess_online/PvpRequst.cpp",
+        "focused": false,
+        "isOpen": true,
+        "left": 0,
+        "order": 0,
+        "top": 0
+    },
+    {
+        "caretX": 19,
+        "caretY": 31,
+        "filename": "D:/Documents/gobang-Online-main_2/gobang-Online-main/chess_online/game.cpp",
+        "focused": false,
+        "isOpen": true,
+        "left": 0,
+        "order": 4,
+        "top": 160
+    },
+    {
+        "caretX": 1,
+        "caretY": 172,
+        "filename": "D:/Documents/gobang-Online-main_2/gobang-Online-main/chess_online/guide.cpp",
+        "focused": true,
+        "isOpen": true,
+        "left": 0,
+        "order": 1,
+        "top": 3180
+    },
+    {
+        "caretX": 1,
+        "caretY": 1,
+        "filename": "D:/Documents/gobang-Online-main_2/gobang-Online-main/chess_online/main.cpp",
+        "focused": false,
+        "isOpen": true,
+        "left": 0,
+        "order": 9,
+        "top": 0
+    },
+    {
+        "caretX": 1,
+        "caretY": 1,
+        "filename": "D:/Documents/gobang-Online-main_2/gobang-Online-main/chess_online/chient.cpp",
+        "focused": false,
+        "isOpen": true,
+        "left": 0,
+        "order": 2,
+        "top": 0
+    },
+    {
+        "caretX": 1,
+        "caretY": 1,
+        "filename": "D:/Documents/gobang-Online-main_2/gobang-Online-main/chess_online/game.h",
         "focused": false,
         "isOpen": true,
         "left": 0,
         "order": 8,
         "top": 0
-    },
-    {
-        "caretX": 1,
-        "caretY": 1,
-        "filename": "C:/Users/71415/Documents/cpp/gobang-Online-main/gobang-Online-main/chess_online/game.h",
-        "focused": false,
-        "isOpen": true,
-        "left": 0,
-        "order": 1,
-        "top": 0
-    },
-    {
-        "caretX": 1,
-        "caretY": 1,
-        "filename": "C:/Users/71415/Documents/cpp/gobang-Online-main/gobang-Online-main/chess_online/Pvp.h",
-        "focused": false,
-        "isOpen": true,
-        "left": 0,
-        "order": 11,
-        "top": 0
-    },
-    {
-        "caretX": 11,
-        "caretY": 9,
-        "filename": "C:/Users/71415/Documents/cpp/gobang-Online-main/gobang-Online-main/chess_online/data.h",
-        "focused": false,
-        "isOpen": true,
-        "left": 0,
-        "order": 0,
-        "top": 264
-    },
-    {
-        "caretX": 3,
-        "caretY": 114,
-        "filename": "C:/Users/71415/Documents/cpp/gobang-Online-main/gobang-Online-main/chess_online/guide.cpp",
-        "focused": false,
-        "isOpen": true,
-        "left": 0,
-        "order": 6,
-        "top": 3102
     }
 ]

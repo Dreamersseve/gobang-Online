@@ -1,7 +1,7 @@
 [Project]
 filename = chess_online.dev
 name = chess_online
-UnitCount = 12
+UnitCount = 13
 Type = 1
 Ver = 3
 Includes = 
@@ -31,7 +31,7 @@ CommandLine =
 Folders = 
 IncludeVersionInfo = 1
 SupportXPThemes = 0
-CompilerSet = 1
+CompilerSet = 2
 StaticLink = 1
 AddCharset = 1
 ExecEncoding = SYSTEM
@@ -53,43 +53,30 @@ Priority = 1000
 OverrideBuildCmd = 0
 BuildCmd = 
 FileEncoding = PROJECT
-RealEncoding = UTF-8
+RealEncoding = ASCII
 
 
 [VersionInfo]
 Major = 0
 Minor = 0
 Release = 0
-Build = 91
+Build = 103
 LanguageID = 1033
 CharsetID = 1252
 CompanyName = 
-FileVersion = 0.0.0.91
+FileVersion = 0.0.0.103
 FileDescription = Developed using the Red Panda C++ IDE
 InternalName = 
 LegalCopyright = 
 LegalTrademarks = 
 OriginalFilename = chess_online.exe
 ProductName = chess_online
-ProductVersion = 0.0.0.91
+ProductVersion = 0.0.0.103
 AutoIncBuildNr = 1
 SyncProduct = 1
 
 
 [Unit2]
-FileName = PvpRequst.cpp
-CompileCpp = 1
-Folder = 源文件
-Compile = 1
-Link = 1
-Priority = 1000
-OverrideBuildCmd = 0
-BuildCmd = 
-FileEncoding = PROJECT
-RealEncoding = UTF-8
-
-
-[Unit3]
 FileName = data.cpp
 CompileCpp = 1
 Folder = 源文件
@@ -102,8 +89,21 @@ FileEncoding = PROJECT
 RealEncoding = UTF-8
 
 
+[Unit3]
+FileName = chient.h
+CompileCpp = 0
+Folder = 头文件
+Compile = 0
+Link = 0
+Priority = 1000
+OverrideBuildCmd = 0
+BuildCmd = 
+FileEncoding = PROJECT
+RealEncoding = UTF-8
+
+
 [Unit4]
-FileName = IO.h
+FileName = data.h
 CompileCpp = 0
 Folder = 头文件
 Compile = 0
@@ -116,7 +116,7 @@ RealEncoding = UTF-8
 
 
 [Unit5]
-FileName = chient.cpp
+FileName = PvpRequst.cpp
 CompileCpp = 1
 Folder = 源文件
 Compile = 1
@@ -129,11 +129,11 @@ RealEncoding = UTF-8
 
 
 [Unit6]
-FileName = main.cpp
-CompileCpp = 1
-Folder = 源文件
-Compile = 1
-Link = 1
+FileName = IO.h
+CompileCpp = 0
+Folder = 头文件
+Compile = 0
+Link = 0
 Priority = 1000
 OverrideBuildCmd = 0
 BuildCmd = 
@@ -155,58 +155,6 @@ RealEncoding = UTF-8
 
 
 [Unit8]
-FileName = chient.h
-CompileCpp = 0
-Folder = 头文件
-Compile = 0
-Link = 0
-Priority = 1000
-OverrideBuildCmd = 0
-BuildCmd = 
-FileEncoding = PROJECT
-RealEncoding = UTF-8
-
-
-[Unit9]
-FileName = game.h
-CompileCpp = 0
-Folder = 头文件
-Compile = 0
-Link = 0
-Priority = 1000
-OverrideBuildCmd = 0
-BuildCmd = 
-FileEncoding = PROJECT
-RealEncoding = UTF-8
-
-
-[Unit10]
-FileName = Pvp.h
-CompileCpp = 0
-Folder = 头文件
-Compile = 0
-Link = 0
-Priority = 1000
-OverrideBuildCmd = 0
-BuildCmd = 
-FileEncoding = PROJECT
-RealEncoding = UTF-8
-
-
-[Unit11]
-FileName = data.h
-CompileCpp = 0
-Folder = 头文件
-Compile = 0
-Link = 0
-Priority = 1000
-OverrideBuildCmd = 0
-BuildCmd = 
-FileEncoding = PROJECT
-RealEncoding = UTF-8
-
-
-[Unit12]
 FileName = guide.cpp
 CompileCpp = 1
 Folder = 源文件
@@ -219,25 +167,74 @@ FileEncoding = PROJECT
 RealEncoding = UTF-8
 
 
+[Unit9]
+FileName = main.cpp
+CompileCpp = 1
+Folder = 源文件
+Compile = 1
+Link = 1
+Priority = 1000
+OverrideBuildCmd = 0
+BuildCmd = 
+FileEncoding = PROJECT
+RealEncoding = UTF-8
+
+
+[Unit10]
+FileName = GUI.cpp
+CompileCpp = 1
+Folder = 源文件
+Compile = 1
+Link = 1
+Priority = 1000
+OverrideBuildCmd = 0
+BuildCmd = 
+FileEncoding = PROJECT
+RealEncoding = 
+
+
+[Unit11]
+FileName = chient.cpp
+CompileCpp = 1
+Folder = 源文件
+Compile = 1
+Link = 1
+Priority = 1000
+OverrideBuildCmd = 0
+BuildCmd = 
+FileEncoding = PROJECT
+RealEncoding = UTF-8
+
+
+[Unit12]
+FileName = Pvp.h
+CompileCpp = 0
+Folder = 头文件
+Compile = 0
+Link = 0
+Priority = 1000
+OverrideBuildCmd = 0
+BuildCmd = 
+FileEncoding = PROJECT
+RealEncoding = UTF-8
+
+
+[Unit13]
+FileName = game.h
+CompileCpp = 0
+Folder = 头文件
+Compile = 0
+Link = 0
+Priority = 1000
+OverrideBuildCmd = 0
+BuildCmd = 
+FileEncoding = PROJECT
+RealEncoding = UTF-8
+
+
 [CompilerSettings]
-c_cmd_opt_std = 
-cc_cmd_opt_abort_on_error = 
-cc_cmd_opt_address_sanitizer = 
-cc_cmd_opt_check_iso_conformance = 
-cc_cmd_opt_debug_info = on
-cc_cmd_opt_inhibit_all_warning = 
-cc_cmd_opt_instruction = 
+cc_cmd_opt_debug_info = 
 cc_cmd_opt_optimize = 2
-cc_cmd_opt_pointer_size = 
-cc_cmd_opt_profile_info = on
-cc_cmd_opt_stack_protector = 
-cc_cmd_opt_std = c++14
-cc_cmd_opt_syntax_only = 
+cc_cmd_opt_std = 
 cc_cmd_opt_use_pipe = on
-cc_cmd_opt_warning_all = on
-cc_cmd_opt_warning_as_error = 
-cc_cmd_opt_warning_extra = on
-link_cmd_opt_no_console = 
-link_cmd_opt_no_link_stdlib = 
-link_cmd_opt_stack_size = 12
-link_cmd_opt_strip_exe = 
+link_cmd_opt_strip_exe = on
