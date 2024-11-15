@@ -1,28 +1,8 @@
 [
     {
         "caretX": 1,
-        "caretY": 16,
-        "filename": "D:/Documents/gobang-Online-main_2/gobang-Online-main/chess_online/guide.h",
-        "focused": false,
-        "isOpen": true,
-        "left": 0,
-        "order": 5,
-        "top": 0
-    },
-    {
-        "caretX": 1,
         "caretY": 1,
-        "filename": "D:/Documents/gobang-Online-main_2/gobang-Online-main/chess_online/data.cpp",
-        "focused": false,
-        "isOpen": true,
-        "left": 0,
-        "order": 3,
-        "top": 0
-    },
-    {
-        "caretX": 10,
-        "caretY": 5,
-        "filename": "D:/Documents/gobang-Online-main_2/gobang-Online-main/chess_online/chient.h",
+        "filename": "D:/Documents/gobang-Online-main_2/gobang-Online-main/chess_online/PvpRequst.cpp",
         "focused": false,
         "isOpen": true,
         "left": 0,
@@ -32,7 +12,17 @@
     {
         "caretX": 1,
         "caretY": 1,
-        "filename": "D:/Documents/gobang-Online-main_2/gobang-Online-main/chess_online/data.h",
+        "filename": "D:/Documents/gobang-Online-main_2/gobang-Online-main/chess_online/game.h",
+        "focused": false,
+        "isOpen": true,
+        "left": 0,
+        "order": 3,
+        "top": 0
+    },
+    {
+        "caretX": 1,
+        "caretY": 1,
+        "filename": "D:/Documents/gobang-Online-main_2/gobang-Online-main/chess_online/guide.h",
         "focused": false,
         "isOpen": true,
         "left": 0,
@@ -42,61 +32,51 @@
     {
         "caretX": 1,
         "caretY": 1,
-        "filename": "D:/Documents/gobang-Online-main_2/gobang-Online-main/chess_online/PvpRequst.cpp",
-        "focused": false,
-        "isOpen": true,
-        "left": 0,
-        "order": 0,
-        "top": 0
-    },
-    {
-        "caretX": 19,
-        "caretY": 31,
-        "filename": "D:/Documents/gobang-Online-main_2/gobang-Online-main/chess_online/game.cpp",
-        "focused": false,
-        "isOpen": true,
-        "left": 0,
-        "order": 4,
-        "top": 160
-    },
-    {
-        "caretX": 1,
-        "caretY": 172,
-        "filename": "D:/Documents/gobang-Online-main_2/gobang-Online-main/chess_online/guide.cpp",
-        "focused": true,
-        "isOpen": true,
-        "left": 0,
-        "order": 1,
-        "top": 3180
-    },
-    {
-        "caretX": 1,
-        "caretY": 1,
-        "filename": "D:/Documents/gobang-Online-main_2/gobang-Online-main/chess_online/main.cpp",
-        "focused": false,
-        "isOpen": true,
-        "left": 0,
-        "order": 9,
-        "top": 0
-    },
-    {
-        "caretX": 1,
-        "caretY": 1,
         "filename": "D:/Documents/gobang-Online-main_2/gobang-Online-main/chess_online/chient.cpp",
         "focused": false,
         "isOpen": true,
         "left": 0,
-        "order": 2,
+        "order": 1,
         "top": 0
     },
     {
-        "caretX": 1,
-        "caretY": 1,
-        "filename": "D:/Documents/gobang-Online-main_2/gobang-Online-main/chess_online/game.h",
+        "caretX": 2,
+        "caretY": 162,
+        "filename": "D:/Documents/gobang-Online-main_2/gobang-Online-main/chess_online/IO.cpp",
         "focused": false,
         "isOpen": true,
         "left": 0,
-        "order": 8,
+        "order": 5,
+        "top": 2622
+    },
+    {
+        "caretX": 80,
+        "caretY": 30,
+        "filename": "D:/Documents/gobang-Online-main_2/gobang-Online-main/chess_online/data.h",
+        "focused": false,
+        "isOpen": true,
+        "left": 0,
+        "order": 2,
+        "top": 285
+    },
+    {
+        "caretX": 1,
+        "caretY": 12,
+        "filename": "D:/Documents/gobang-Online-main_2/gobang-Online-main/chess_online/IO.h",
+        "focused": false,
+        "isOpen": true,
+        "left": 0,
+        "order": 4,
         "top": 0
+    },
+    {
+        "caretX": 6,
+        "caretY": 69,
+        "filename": "D:/Documents/gobang-Online-main_2/gobang-Online-main/chess_online/data.cpp",
+        "focused": true,
+        "isOpen": true,
+        "left": 0,
+        "order": 0,
+        "top": 874
     }
 ]

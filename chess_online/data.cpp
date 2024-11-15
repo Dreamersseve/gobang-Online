@@ -1,4 +1,5 @@
 #include"chient.h"
+#include"IO.h"
 #include<bits/stdc++.h>
 
 using namespace std;
@@ -12,28 +13,6 @@ struct PLAYER{
 		return (double)win / (win+lose) > (double)x.win / (x.win + x.lose);
 	}
 };
-void setColor(int color) {  
-	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);  
-	SetConsoleTextAttribute(hConsole, color);  
-}  //0: 黑色1: 蓝色2: 绿色3: 青色（浅蓝色）4: 红色5: 紫色6: 黄色7: 白色（默认）
-
-void resetColor() {  
-	setColor(7); // 7 是默认的白色（背景为黑色）  
-}  
-
-void PrintInfo(string str){
-	cout<<"[INFO] "<<str<<'\n';
-}
-void PrintWar(string str){
-	setColor(6);
-	cout<<"[WAR]  "<<str<<'\n';
-	resetColor();
-}
-void PrintErr(string str){
-	setColor(4);
-	cout<<"[ERR]  "<<str<<'\n';
-	resetColor();
-}
 string userID;
 PLAYER Nowplayer;
 string getPassword(string UID){
@@ -73,7 +52,7 @@ int Register(){
 	while(!IDsucessFlag){
 		PrintInfo("输入注册ID，ID只能由a-z,A-Z,与'_'组成，不可包含数字，且长度在20个字符以内");
 		regID.clear();
-		 cin>>regID;
+		cin>>regID;
 		Rawstring = sendRequest(sock, "GETSTR", token, 1); //为了防止注册期间ID被其他人注册，每次都更新一次ID列表
 		
 		if(regID.length() > MXplayerID){
@@ -102,7 +81,7 @@ int Register(){
 	while(!PSWsucessFlag){
 		PrintInfo("输入密码，密码只能由0-9组成，且长度在20个字符以内");
 		regPSW.clear();
-		 cin>>regPSW;
+		cin>>regPSW;
 		if(regPSW.length() > 20){
 			PrintInfo("密码过长，请重新输入");
 		}else{
@@ -128,7 +107,7 @@ int Register(){
 	PrintInfo("注册成功，请重新登录");
 	return 0;
 }
-PLAYER getUserData(string UID){ //请保证UID合法且存在！
+PLAYER getUserData(string UID,string Rawstring_1 = "",string Rawstring_2 = ""){ //请保证UID合法且存在！
 	PLAYER ans;
 	
 	ans.name = UID;
@@ -138,7 +117,8 @@ PLAYER getUserData(string UID){ //请保证UID合法且存在！
 		return ans;
 	}
 	string Rawstring;
-	Rawstring = sendRequest(sock,"GETSTR",token,2); //2.玩家ID-数据 格式:  ID:赢场数|输场数|
+	if(Rawstring_1.empty())Rawstring = sendRequest(sock,"GETSTR",token,2); //2.玩家ID-数据 格式:  ID:赢场数|输场数|
+	else Rawstring = Rawstring_1;
 	size_t UIDcur = Rawstring.find(UID);
 	
 	size_t WINcur = Rawstring.find(":",UIDcur) + 1;
@@ -149,7 +129,8 @@ PLAYER getUserData(string UID){ //请保证UID合法且存在！
 	
 	ans.win = atoi(WINdata.c_str());
 	ans.lose = atoi(LOSEdata.c_str());
-	Rawstring = sendRequest(sock,"GETSTR",token,3);
+	if(Rawstring_2.empty())Rawstring = sendRequest(sock,"GETSTR",token,3);
+	else Rawstring = Rawstring_2;
 	if(Rawstring.find(UID) != string::npos && Rawstring[Rawstring.find(UID) - 1] == '|' && Rawstring[Rawstring.find(UID)+ UID.length()] == '|') ans.onlineflag = true;
 	else ans.onlineflag = false;
 	
@@ -232,6 +213,8 @@ void getALLplayerData(){
 	string UID;
 	Rawstring = sendRequest(sock,"GETSTR",token,1);
 	string Onlineplayer = "|";
+	string Rawstring1 = sendRequest(sock,"GETSTR",token,2);
+	string Rawstring2 = sendRequest(sock,"GETSTR",token,3);
 	for(int i = 0;i < (int)Rawstring.length();i++){
 		
 		string temp;
@@ -239,7 +222,7 @@ void getALLplayerData(){
 		if(Can_Be_Username(temp)){
 			UID.push_back(Rawstring[i]);
 		} else if(Rawstring[i] == ':'){
-			PlayerData.push_back(getUserData(UID));
+			PlayerData.push_back(getUserData(UID,Rawstring1,Rawstring2));
 			if(PlayerData.back().onlineflag){
 				Onlineplayer.insert(Onlineplayer.length(),UID);
 				Onlineplayer.insert(Onlineplayer.length(),"|");

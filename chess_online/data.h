@@ -27,7 +27,7 @@ string getPassword(string UID);
 bool Can_Be_Username(string UID);
 bool Can_Be_Password(string PSW);
 int Register();
-PLAYER getUserData(string UID);
+PLAYER getUserData(string UID,string Rawstring_1 = "",string Rawstring_2 = "");
 void printPHB();
 int updateData(PLAYER player);
 int login();

@@ -8,5 +8,6 @@ void resetColor();
 void PrintInfo(std::string str);
 void PrintWar(std::string str);
 void PrintErr(std::string str);
+std::string GetString(std::string prefix = "",std::string suffix = "");
 
 #endif

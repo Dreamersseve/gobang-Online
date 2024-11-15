@@ -9,33 +9,6 @@
 
 using namespace std;
 int logout();
-
-
-
-#define KEY_DOWN(vk_code) ((GetAsyncKeyState(vk_code) & 0x8000) ? 1 : 0)
-
-class mouse_checker {
-public:
-	// 定义一个结构体来存储点击位置的坐标
-	struct ClickPosition {
-		bool isClicked;
-		int x;
-		int y;
-	};
-	
-	// 获取鼠标在控制台窗口中的点击位置
-	ClickPosition GetMouseClickPosition();
-	
-	// 禁止拷贝和赋值，因为这个类的实例应该是唯一的（单例模式的一种简单实现）
-	mouse_checker(const mouse_checker&) = delete;
-	mouse_checker& operator=(const mouse_checker&) = delete;
-	
-private:
-	// 私有构造函数，防止外部直接实例化
-	mouse_checker() {}
-};
-
-
 void printWelcome(){
 	int turns = 30;
 	while(turns--){
@@ -124,14 +97,13 @@ void printOnlineList(){
 	return;
 }
 void PrintMainMenu(){
-	system("cls");
 	cout<<"================================="<<endl;
 	cout<<"五子棋 ONLINE 开始菜单           "<<endl;
 	cout<<endl;
 	cout<<userID<<"，您好"<<endl;
 	cout<<endl;
 	
-	cout<<"\n1|发起对局请求\n2|查看对局邀请\n3|查看排行榜\n4|退出登录"<<endl;
+	cout<<"\n1|发起对局请求\n2|查看对局邀请\n 3|查看排行榜\n4|退出登录"<<endl;
 	   
 	int ops;
 	   cin>>ops;
@@ -160,21 +132,8 @@ void PrintMainMenu(){
 }
 void WIN(){
 	system("cls");
-	/*
-	          _       
-	__      _(_)_ __  
-	\ \ /\ / / | '_ \ 
-	 \ V  V /| | | | |
-	  \_/\_/ |_|_| |_|
-	
-	*/
+	cout<<"====胜利===="<<endl;
 	//"保证高亮
-	cout << R"(	          _       )" << endl
-	<< R"(	__      _(_)_ __  )" << endl
-<< R"(	\ \ /\ / / | '_ \ )" << endl
-	<< R"(	 \ V  V /| | | | |)" << endl
-	<< R"(	  \_/\_/ |_|_| |_|)" << endl;
-	
 	Sleep(2000);
 	PLAYER p = getUserData(userID);
 	cout<<endl;
