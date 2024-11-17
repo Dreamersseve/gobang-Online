@@ -1,0 +1,71 @@
+{
+    "breakpoints": [
+        {
+            "breakpoint_type": 0,
+            "condition": "",
+            "enabled": true,
+            "filename": "guide.cpp",
+            "line": 135,
+            "timestamp": "1731843636747"
+        },
+        {
+            "breakpoint_type": 0,
+            "condition": "",
+            "enabled": true,
+            "filename": "guide.cpp",
+            "line": 161,
+            "timestamp": "1731843641855"
+        },
+        {
+            "breakpoint_type": 0,
+            "condition": "",
+            "enabled": true,
+            "filename": "guide.cpp",
+            "line": 179,
+            "timestamp": "1731843644556"
+        },
+        {
+            "breakpoint_type": 0,
+            "condition": "",
+            "enabled": true,
+            "filename": "guide.cpp",
+            "line": 199,
+            "timestamp": "1731843647055"
+        },
+        {
+            "breakpoint_type": 0,
+            "condition": "",
+            "enabled": true,
+            "filename": "GUI.h",
+            "line": 13,
+            "timestamp": "1731844963181"
+        }
+    ],
+    "timestamp": "1731849516548",
+    "watchvars": [
+        {
+            "expression": "Button[cur].start.x",
+            "timestamp": "1731825168841"
+        },
+        {
+            "expression": "pos.x",
+            "timestamp": "1731825247712"
+        },
+        {
+            "expression": "gui.button.checkedflag[98]",
+            "timestamp": "1731825507345"
+        },
+        {
+            "expression": "outMap[i]",
+            "timestamp": "1731842504158"
+        },
+        {
+            "expression": "coord",
+            "timestamp": "1731842518779"
+        },
+        {
+            "expression": "bytes",
+            "timestamp": "1731842524453"
+        }
+    ]
+}
